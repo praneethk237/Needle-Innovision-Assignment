@@ -1,0 +1,15 @@
+version: '3'
+services:
+  database:
+    image: "postgres" # use latest official postgres version
+    container_name: "local-postgresql-needle"
+    ports:
+      - "5554:5432"
+    restart: always
+    environment:
+      POSTGRES_USER: "postgresondocker"
+      POSTGRES_PASSWORD: "postgresondocker"
+      POSTGRES_DB: "postgresondocker"
+
+#volumes:
+#  database-data: # named volumes can be managed easier using docker-compose
